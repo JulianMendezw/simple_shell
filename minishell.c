@@ -20,7 +20,9 @@ int main(void)
 	size_t nbytes = 0;
 	char *buffer = NULL, **array = NULL, *token = NULL;
 	pid_t child;
-	
+	char *xclose[] = {"exit", "_which", NULL};
+
+
 	struct stat st;
 
 	signal(SIGINT, _ctrl_c);
