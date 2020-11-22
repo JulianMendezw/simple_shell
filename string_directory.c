@@ -19,9 +19,7 @@ char *_string_directory(char **argv)
 	int i = 0, j = 0, k = 0;
 	char **token_path = NULL, *p = NULL, *path = NULL;
 
-	for (i = 0; environ[i]; i++)
-		if (!strncmp(environ[i], "PATH", 4))
-			path = (environ[i] + 5); /*string de directorios*/
+	path = _getenv("PATH"); /*string de directorios*/
 
 	token_path = _split_string(path, ":"); /*tokens del path*/
 
@@ -51,4 +49,25 @@ char *_string_directory(char **argv)
 		i++;
 	}
 	return (NULL);
+}
+
+char *_getenv(char *name)
+{
+	int i = 0, j = 0;
+	char *null = "(null)";
+
+	char *path = NULL;
+
+	for(j = 0;name[j]; j++)
+	;
+
+	for (i = 0; environ[i] != NULL; i++)
+	{
+		if (!_strcmp(environ[i], name))
+		{
+			path = (environ[i] + (j + 1));
+			return (path);
+		}
+	}
+	return(null);
 }
