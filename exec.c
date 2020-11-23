@@ -8,10 +8,10 @@
 #include <sys/wait.h>
 
 /**
- * main - super minishel ♥.
+ * _exec - Funtion to execute program.
  *
- * @ac: arguments count.
- * @argv: arguments.
+ * @token: Command from the user imput.
+ * @array: arguments for the program to execute.
  *
  * Return: Always return 0.
  */

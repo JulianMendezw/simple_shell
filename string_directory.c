@@ -78,10 +78,12 @@ char *_getenv(char *name)
 	}
 	return (null);
 }
-/*
+/**
  * _token - Function to split a strink by tokens
+ *
  * @buffer: string from buffer
  * @array: array to save all tokens
+ *
  * Return: string divided by token to success
  */
 
@@ -102,5 +104,5 @@ char *_token(char *buffer, char *array[])
 	{
 		token = _string_directory(array);
 	}
-	return(token);
+	return (token);
 }

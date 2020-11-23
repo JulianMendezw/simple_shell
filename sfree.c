@@ -3,11 +3,11 @@
 #include <stdlib.h>
 
 /**
- * double_free - Function to free double pointers
+ * _sfree - Function to free double pointers
  * @i_want_to_be_free: double pointer to be free
  */
 
-void double_free(char **i_want_to_be_free)
+void _sfree(char **i_want_to_be_free)
 {
 	int ptr_index;
 
