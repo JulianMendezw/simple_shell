@@ -12,47 +12,7 @@ hsh main.c shell.c
 ($) exit
 ```
 
-### Tools 🛠️
-
-*getline 
-
-*execve System call - Executing a program
-
-*fork Creating processes
-
-*wait Suspends execution of the calling process
-
 ### Librarys 📚
-
-#include <stdio.h>
-
-#include <stdlib.h>
-
-#include <unistd.h>
-
-#include <string.h>
-
-#include <sys/wait.h>
-
-#include "header.h"
-
-### Style for coding
-
-Use the Betty style, it will be checked using betty-style.pl and betty-doc.pl.
-
-###Authors ✒️
-
-Tools 🛠️
-
-*getline Get line from user
-
-*execve System call - Executing a program
-
-*fork Creating processes
-
-*wait Suspends execution of the calling process
-
-Librarys 📚
 
 #include <stdio.h>
 
@@ -68,7 +28,21 @@ Librarys 📚
 
 #include <signal.h>
 
+#include <signal.h>
+
 #include "header.h"
+
+
+### Tools 🛠️
+
+*getline Get line from user
+
+*execve System call - Executing a program
+
+*fork Creating processes
+
+*wait Suspends execution of the calling process
+
 
 ### Compiled this way🔧
 
@@ -80,7 +54,7 @@ Run the executable in your terminal after compiling
 
 ```
 $ ./hsh
-minishell$:ls
+simpleshell$:ls
 README.md   ctrl_c.c  header.h.gch	simple_shell
 a.out	        exec.c    minishell.c	splits_string.c
 built-in.c  header.h  shell_test_suite	string_directory.c
