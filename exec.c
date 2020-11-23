@@ -8,11 +8,14 @@
 #include <sys/wait.h>
 
 /**
- *_exec - function to executate the program
- *@token: pointer to command from user´s input
- *@array: array to execute with execve
- *Return: 0 for success
+ * main - super minishel ♥.
+ *
+ * @ac: arguments count.
+ * @argv: arguments.
+ *
+ * Return: Always return 0.
  */
+
 int _exec(char *token, char *array[])
 {
 	struct stat st;

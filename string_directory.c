@@ -48,6 +48,8 @@ char *_string_directory(char **argv)
 		}
 		i++;
 	}
+	free(token_path);
+	free(p);
 	return (NULL);
 }
 
@@ -75,4 +77,30 @@ char *_getenv(char *name)
 		}
 	}
 	return (null);
+}
+/*
+ * _token - Function to split a strink by tokens
+ * @buffer: string from buffer
+ * @array: array to save all tokens
+ * Return: string divided by token to success
+ */
+
+char *_token(char *buffer, char *array[])
+{
+	char *token = NULL;
+
+	if (buffer[0] == '/' || buffer[0] == ' ')
+	{
+		token = strtok(buffer, " "); /*By Jong line ♥*/
+		if (token[0] != '/')
+		{
+			token = _string_directory(&token);
+			return (token);
+		}
+	}
+	else
+	{
+		token = _string_directory(array);
+	}
+	return(token);
 }
