@@ -7,6 +7,12 @@
 #include <sys/stat.h>
 #include <sys/wait.h>
 
+/**
+ *_exec - function to executate the program
+ *@token: pointer to command from user´s input
+ *@array: array to execute with execve
+ *Return: 0 for success
+ */
 int _exec(char *token, char *array[])
 {
 	struct stat st;
@@ -28,5 +34,5 @@ int _exec(char *token, char *array[])
 		else
 			wait(NULL);
 	}
-	return(0);
+	return (0);
 }
