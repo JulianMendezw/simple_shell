@@ -4,11 +4,13 @@ Unix shell is a command-line interpreter designed to read commands typed by a us
 
 ### For testing
 
+```
 $ ./hsh
 ($) /bin/ls
 hsh main.c shell.c
 ($)
 ($) exit
+```
 
 ### Tools 🛠️
 
@@ -42,13 +44,14 @@ Use the Betty style, it will be checked using betty-style.pl and betty-doc.pl.
 
 Tools 🛠️
 
-*getline Get line
+*getline Get line from user
 
 *execve System call - Executing a program
 
 *fork Creating processes
 
 *wait Suspends execution of the calling process
+
 Librarys 📚
 
 #include <stdio.h>
@@ -61,22 +64,27 @@ Librarys 📚
 
 #include <sys/wait.h>
 
-#include "myshell.h"
+#include <sys/stat.h>
+
+#include <signal.h>
+
+#include "header.h"
 
 ### Compiled this way🔧
 
 gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
 
-Example
+### Example
 
 Run the executable in your terminal after compiling
 
+```
 $ ./hsh
 minishell$:ls
 README.md   ctrl_c.c  header.h.gch	simple_shell
 a.out	        exec.c    minishell.c	splits_string.c
 built-in.c  header.h  shell_test_suite	string_directory.c
-
+```
 
 ### Authors
 
