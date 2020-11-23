@@ -1,9 +1,16 @@
+#include "header.h"
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
 #include <sys/wait.h>
 #include <string.h>
-#include "header.h"
+
+/**
+ * _split_string - Function to splir an array in tokens
+ *@str: string from buffer.
+ *@delim: character to create tokens
+ * Return: an array splited by tokens to success
+ */
 
 
 char **_split_string(char *str, char *delim)
@@ -42,12 +49,10 @@ char **_split_string(char *str, char *delim)
 
 
 /**
- * _strdup - a function that returns a pointer to a newly allocated
- * space in memory, which contains a copy of the string given as a parameter.
- *
- *@str: string source.
- *
- * Return: EXIT_SUCCESS or EXIT_FAILURE
+ * _strdup - Function that duplicate an array
+ * with a new apce in memory
+ * @str: string to duplicated
+ * Return: duplicated string to succes or NULL from error
  */
 
 char *_strdup(char *str)

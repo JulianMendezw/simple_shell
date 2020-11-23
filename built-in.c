@@ -3,6 +3,12 @@
 #include <string.h>
 #include <unistd.h>
 
+/**
+ * _print_env - Function to print env
+ * @array: string from buffer to compare
+ * Return: 1 for success or -1 for error
+ */
+
 int _print_env(char **array)
 {
 	int i = 0, j = 0;

@@ -51,6 +51,11 @@ char *_string_directory(char **argv)
 	return (NULL);
 }
 
+/**
+ * _getenv - Function to get de enviroment
+ * @name:string from buffer
+ * Return: PATH to succes or NULL for error
+ */
 char *_getenv(char *name)
 {
 	int i = 0, j = 0;
@@ -58,7 +63,7 @@ char *_getenv(char *name)
 
 	char *path = NULL;
 
-	for(j = 0;name[j]; j++)
+	for (j = 0; name[j]; j++)
 	;
 
 	for (i = 0; environ[i] != NULL; i++)
@@ -69,5 +74,5 @@ char *_getenv(char *name)
 			return (path);
 		}
 	}
-	return(null);
+	return (null);
 }
