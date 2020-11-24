@@ -21,7 +21,7 @@ char *_string_directory(char **argv)
 
 	path = _getenv("PATH"); /*string de directorios*/
 
-	if (path[0] == '.')
+	if (path[0] == ':')
 		path = _hack_path(path);
 
 	token_path = _split_string(path, ":"); /*tokens del path*/
