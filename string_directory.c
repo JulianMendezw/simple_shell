@@ -93,7 +93,7 @@ char *_token(char *buffer, char *array[])
 
 	if (buffer[0] == '/' || buffer[0] == ' ')
 	{
-		token = strtok(buffer, " "); /*By Jong line ♥*/
+		token = _strtok(buffer, " "); /*By Jong line ♥*/
 		if (token[0] != '/')
 		{
 			token = _string_directory(&token);

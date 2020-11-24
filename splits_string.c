@@ -22,23 +22,23 @@ char **_split_string(char *str, char *delim)
 
 		str_copy = _strdup(str);
 
-		token = strtok(str_copy, delim);
+		token = _strtok(str_copy, delim);
 
 		while (token)
 		{
-			token = strtok(NULL, delim);
+			token = _strtok(NULL, delim);
 			i++;
 		}
 		free(str_copy);
 
 		str_copy = _strdup(str);
-		token2 = strtok(str_copy, delim);
+		token2 = _strtok(str_copy, delim);
 		array = malloc(sizeof(char *) * (i + 1)); /*TODO: freeme!!*/
 
 		while (token2)
 		{
 			array[x] = _strdup(token2);
-			token2 = strtok(NULL, delim);
+			token2 = _strtok(NULL, delim);
 			x++;
 		}
 		array[x] = NULL;

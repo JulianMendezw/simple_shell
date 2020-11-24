@@ -15,5 +15,6 @@ void _sfree(char **i_want_to_be_free);
 char *_token(char *buffer, char **array);
 void _error(int count_w, char *array[]);
 char *_itoa(int integer);
+char *_strtok(char *str, const char *delim);
 
 #endif
