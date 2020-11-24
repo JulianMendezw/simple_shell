@@ -18,17 +18,16 @@
 int main(int ac, char *argv[])
 {
 	size_t nbytes = 0;
-	int r_bytes = 0;
+	int r_bytes = 0, count_w = 0;
 	char *buffer = NULL, **array = NULL, *token = NULL;
 	char *xclose[] = {"exit", NULL};
-	struct stat st;
 	(void)ac, (void)argv;
 
 	if (isatty(STDIN_FILENO) != 0)
 		write(STDOUT_FILENO, "\033[94mminishell$: \033[0m", 16);
 
 	signal(SIGINT, _ctrl_c);
-	while ((r_bytes = getline(&buffer, &nbytes, stdin)) != -1)
+	while ((r_bytes = getline(&buffer, &nbytes, stdin)) != -1 && ++count_w)
 	{
 		if (r_bytes != 1) /*enter line*/
 		{
@@ -40,8 +39,7 @@ int main(int ac, char *argv[])
 				_sfree(array), free(token), free(buffer), exit(0);
 
 			if (_print_env(array) != 1)
-				if (stat(token, &st) == 0)
-				_exec(token, array);
+				_exec(count_w, token, array);
 		}
 		if (isatty(STDIN_FILENO) != 0)
 		write(STDOUT_FILENO, "\033[94mminishell$: \033[0m", 16);

@@ -8,10 +8,12 @@ char *_strcat(char *dest, char *src);
 char *_string_directory(char **argv);
 char *_getenv(char *name);
 int _print_env(char **array);
-int _exec(char *token, char *array[]);
+int _exec(int count_w, char *token, char *array[]);
 char *_strdup(char *str);
 int _strcmp(char *s1, char *s2);
 void _sfree(char **i_want_to_be_free);
 char *_token(char *buffer, char **array);
+void _error(int count_w, char *array[]);
+char *_itoa(int integer);
 
 #endif

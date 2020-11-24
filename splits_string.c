@@ -43,6 +43,8 @@ char **_split_string(char *str, char *delim)
 		}
 		array[x] = NULL;
 
+		free(token);
+		free(token2);
 		free(str_copy);
 		return (array);
 }

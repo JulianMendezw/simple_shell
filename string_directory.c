@@ -83,7 +83,7 @@ char *_getenv(char *name)
  *
  * @buffer: string from buffer
  * @array: array to save all tokens
- *
+ *e
  * Return: string divided by token to success
  */
 
