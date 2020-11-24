@@ -81,6 +81,7 @@ char *_getenv(char *name)
 	}
 	return (null);
 }
+
 /**
  * _token - Function to split a strink by tokens
  *
@@ -111,6 +112,14 @@ char *_token(char *buffer, char *array[])
 }
 
 
+/**
+ * _hack_path - Function to set a . at the begining of a string.
+ *
+ * @path: string from buffer
+ *
+ * Return: string with a . at the begining of a string.
+ */
+
 char *_hack_path(char *path)
 {
 	char *path2 = NULL;
@@ -137,5 +146,5 @@ char *_hack_path(char *path)
 	path2[i] = '\0';
 
 	free(path_cpy);
-	return(path2);
+	return (path2);
 }
