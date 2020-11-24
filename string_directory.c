@@ -35,7 +35,7 @@ char *_string_directory(char **argv)
 		;
 		p = malloc(sizeof(char) * (j + k + 2));
 			if (!p)
-			perror("Error"), free(token_path), exit(0); /*TODO: verificar error output*/
+			perror("Error"), _sfree(token_path), exit(0);
 
 		for (j = 0; token_path[i][j]; j++)
 			p[j] = token_path[i][j];
@@ -46,14 +46,14 @@ char *_string_directory(char **argv)
 
 		if (stat(p, &st) == 0)
 		{
-			free(token_path);
+			_sfree(token_path);
 			return (p);
 		}
 		i++;
 	}
-	free(token_path);
+	_sfree(token_path);
 	free(p);
-	return (NULL);
+	return (argv[0]);
 }
 
 /**
@@ -98,6 +98,7 @@ char *_token(char *buffer, char *array[])
 	if (buffer[0] == '/' || buffer[0] == ' ')
 	{
 		token = _strtok(buffer, " "); /*By Jong line ♥*/
+
 		if (token[0] != '/')
 		{
 			token = _string_directory(&token);
