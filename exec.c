@@ -39,7 +39,8 @@ int _exec(int count_w, char *token, char *array[])
 			wait(NULL);
 	}
 	else
-		_error(count_w, array);
+		_error(count_w, array),
+		_sfree(array);
 
 	return (0);
 }
