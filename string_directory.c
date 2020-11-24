@@ -21,6 +21,9 @@ char *_string_directory(char **argv)
 
 	path = _getenv("PATH"); /*string de directorios*/
 
+	if (path[0] == '.')
+		path = _hack_path(path);
+
 	token_path = _split_string(path, ":"); /*tokens del path*/
 
 	i = 0;
@@ -105,4 +108,34 @@ char *_token(char *buffer, char *array[])
 		token = _string_directory(array);
 	}
 	return (token);
+}
+
+
+char *_hack_path(char *path)
+{
+	char *path2 = NULL;
+	char *path_cpy = NULL;
+	int i = 0;
+
+	path_cpy = strdup(path); /*Duplico el path en otra variable*/
+
+	for (; path[i] != '\0'; i++) /*Para saber el length de Path*/
+		;
+	path2 = malloc(sizeof(char) * i + 2);
+	if (!path2)
+	{
+		free(path_cpy);
+		exit(0);
+	}
+
+	path2[0] = '.';
+
+	for (i = 0; path_cpy[i] != '\0'; i++)
+	{
+		path2[i + 1] = path_cpy[i];
+	}
+	path2[i] = '\0';
+
+	free(path_cpy);
+	return(path2);
 }

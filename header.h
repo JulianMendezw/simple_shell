@@ -16,5 +16,6 @@ char *_token(char *buffer, char **array);
 void _error(int count_w, char *array[]);
 char *_itoa(int integer);
 char *_strtok(char *str, const char *delim);
+char *_hack_path(char *path);
 
 #endif
