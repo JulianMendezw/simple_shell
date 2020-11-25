@@ -1,11 +1,4 @@
 #include "header.h"
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <string.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <sys/wait.h>
 
 /**
  * _exec - Funtion to execute program.
@@ -45,70 +38,66 @@ int _exec(int count_w, char *token, char *array[])
 	return (0);
 }
 
-
 /**
- * _error - Funtion to execute program.
- *
- * @count_w: Command from the user imput.
- * @array: arguments for the program to execute.
- *
- * Return: Always return 0.
+ * _print_env - Function to print env
+ * @array: string from buffer to compare
+ * Return: 1 for success or -1 for error
  */
 
-void _error(int count_w, char *array[])
+int _print_env(char **array)
 {
-	int i = 0;
-	char *print_c = NULL;
+	int i = 0, j = 0;
+	char *key_word[] = {"env", NULL};
 
-	print_c = _itoa(count_w);
-
-	for (i = 0; print_c[i]; i++)
-	;
-	if (isatty(STDIN_FILENO) != 0)
+	if (_strcmp(array[0], key_word[0]) == 0)
 	{
-		write(STDERR_FILENO, "\033[94mminishell$: \033[0m", 17);
-
-	write(STDERR_FILENO, print_c, i); /* by Andy.*/
-
-
-		write(STDERR_FILENO, ": ", 2);
+		while (environ[i])
+		{
+			for (j = 0; environ[i][j]; j++)
+			;
+			write(1, environ[i], j);
+			write(1, "\n", 1);
+			i++;
+		}
+		return (1);
 	}
-		for (i = 0; array[0][i]; i++)
-		;
-
-		write(STDERR_FILENO, array[0], i);
-		write(STDIN_FILENO, ": not found\n", 12);
-
+return (-1);
 }
 
 /**
- * _itoa - Funtion to execute program.
- *
- * @count_w: Command from the user imput.
- *
- * Return: Always return 0.
+ *_ctrl_c - function to capture interruption signal
+ *@sig: signal variable
+ *Return: void
  */
-
-
-char *_itoa(int count_w)
+void _ctrl_c(int sig)
 {
-	char *numstr;
-	unsigned int tmp, digits;
+	(void)sig;
+	write(STDERR_FILENO, "\n", 2);
+	exit(0);
+}
 
-	tmp = count_w;
-	for (digits = 0; tmp != 0; digits++)
-		tmp /= 10;
-	numstr = malloc(sizeof(char) * (digits + 1));
-	if (numstr == NULL)
+/**
+ * _getenv - Function to get de enviroment
+ * @name:string from buffer
+ * Return: PATH to succes or NULL for error
+ */
+char *_getenv(char *name)
+{
+	int i = 0, j = 0;
+	char *null = "(null)";
+
+	char *path = NULL;
+
+	for (j = 0; name[j]; j++)
+	;
+
+	for (i = 0; environ[i] != NULL; i++)
 	{
-		perror("Fatal Error1");
-		exit(127);
+		if (!_strcmp(environ[i], name))
+		{
+			path = (environ[i] + (j + 1));
+			return (path);
+		}
 	}
-	numstr[digits] = '\0';
-	for (--digits; count_w; --digits)
-	{
-		numstr[digits] = (count_w % 10) + '0';
-		count_w /= 10;
-	}
-	return (numstr);
+	return (null);
 }

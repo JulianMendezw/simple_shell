@@ -1,6 +1,22 @@
 #ifndef __HEADER_H__
 #define __HEADER_H__
 
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <sys/wait.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <signal.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <signal.h>
+#include <sys/wait.h>
+
 extern char **environ;
 char **_split_string(char *str, char *delim);
 void _ctrl_c(int sig);
