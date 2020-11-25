@@ -14,7 +14,7 @@ char **_split_string(char *str, char *delim)
 	char **array = NULL, *token = NULL, *token2;
 	char *str_copy = NULL;
 
-	str_copy = _strdup(str); /*TODO: im free!!*/
+	str_copy = _strdup(str);
 
 	token = _strtok(str_copy, delim);
 
@@ -27,7 +27,7 @@ char **_split_string(char *str, char *delim)
 
 	str_copy = _strdup(str);
 	token2 = _strtok(str_copy, delim);
-	array = malloc(sizeof(char *) * (i + 1)); /*FIXME: freeme!!*/
+	array = malloc(sizeof(char *) * (i + 1));
 
 	while (token2)
 	{
