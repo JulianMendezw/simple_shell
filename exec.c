@@ -30,6 +30,7 @@ int _exec(int count_w, char *token, char *array[])
 		}
 		else
 			wait(NULL);
+			_sfree(array);
 	}
 	else
 		_error(count_w, array),

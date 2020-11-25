@@ -64,10 +64,6 @@ char *_itoa(int count_w)
 	return (numstr);
 }
 
-#include "header.h"
-#include <stdio.h>
-#include <stdlib.h>
-
 /**
  * _sfree - Function to free double pointers
  * @i_want_to_be_free: double pointer to be free
@@ -101,8 +97,8 @@ char *_hack_path(char *path)
 	path_cpy = _strdup(path); /*Duplico el path en otra variable*/
 
 	for (; path[i] != '\0'; i++) /*Para saber el length de Path*/
-		;
-	path2 = malloc(sizeof(char) * i + 2);
+	;
+	path2 = malloc(sizeof(char) * i + 1);
 	if (!path2)
 	{
 		free(path_cpy);
@@ -113,7 +109,7 @@ char *_hack_path(char *path)
 
 	for (i = 0; path_cpy[i] != '\0'; i++)
 	{
-		path2[i + 1] = path_cpy[i];
+		path2[i + 1] = path_cpy[i + 1];
 	}
 	path2[i] = '\0';
 
