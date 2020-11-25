@@ -29,7 +29,7 @@ int _exec(int count_w, char *token, char *array[])
 				perror("Error Execve"), exit(1);
 		}
 		else
-			wait(NULL);
+			wait(NULL),
 			_sfree(array);
 	}
 	else
