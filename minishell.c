@@ -37,7 +37,7 @@ int main(int ac, char *argv[])
 
 			array = _split_string(buffer, " ");
 			token = _token(array);
-			if(token == NULL)
+			if (token == NULL)
 				token = array[0];
 
 			if (_print_env(array) != 1)
