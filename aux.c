@@ -14,7 +14,7 @@ char **_split_string(char *str, char *delim)
 	char **array = NULL, *token = NULL, *token2;
 	char *str_copy = NULL;
 
-	str_copy = _strdup(str);
+	str_copy = _strdup(str); /*TODO: im free!!*/
 
 	token = _strtok(str_copy, delim);
 
@@ -27,7 +27,7 @@ char **_split_string(char *str, char *delim)
 
 	str_copy = _strdup(str);
 	token2 = _strtok(str_copy, delim);
-	array = malloc(sizeof(char *) * (i + 1)); /*TODO: freeme!!*/
+	array = malloc(sizeof(char *) * (i + 1)); /*FIXME: freeme!!*/
 
 	while (token2)
 	{
@@ -89,10 +89,10 @@ char *_string_directory(char **argv)
 			return (p);
 		}
 		i++;
+		free(p);
 	}
 	_sfree(token_path);
-	free(p);
-	return (argv[0]);
+	return (NULL);
 }
 
 

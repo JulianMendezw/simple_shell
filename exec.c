@@ -29,13 +29,18 @@ int _exec(int count_w, char *token, char *array[])
 				perror("Error Execve"), exit(1);
 		}
 		else
-			wait(NULL),
+		{
+			wait(NULL);
 			_sfree(array);
+			free(token);
+		}
 	}
-	else
-		_error(count_w, array),
-		_sfree(array);
 
+	else
+	{
+		_error(count_w, array);
+		_sfree(array);
+	}
 	return (0);
 }
 

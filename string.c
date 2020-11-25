@@ -9,17 +9,15 @@
  * Return: string divided by token to success
  */
 
-char *_token(char *buffer, char *array[])
+char *_token(char *array[])
 {
 	char *token = NULL;
 
-	if (buffer[0] == '/' || buffer[0] == ' ')
+	if (array[0][0] == '/' || array[0][0] == ' ')
 	{
-		token = _strtok(buffer, " "); /*By Jong line ♥*/
-
 		if (token[0] != '/')
 		{
-			token = _string_directory(&token);
+			token = _string_directory(array);
 			return (token);
 		}
 	}
@@ -29,7 +27,6 @@ char *_token(char *buffer, char *array[])
 	}
 	return (token);
 }
-
 
 /**
  * _strdup - Function that duplicate an array

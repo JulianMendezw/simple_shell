@@ -20,7 +20,7 @@
 extern char **environ;
 
 /* string */
-char *_token(char *buffer, char **array);
+char *_token(char **array);
 char *_strdup(char *str);
 int _strcmp(char *s1, char *s2);
 

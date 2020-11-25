@@ -32,17 +32,19 @@ int main(int ac, char *argv[])
 		if (r_bytes != 1) /*enter line*/
 		{
 			buffer[r_bytes - 1] = '\0';
-			array = _split_string(buffer, " ");
-			token = _token(buffer, array);
+			if (_strcmp(buffer, xclose[0]) == 0) /* By sotelo line ♥ */
+				free(buffer), exit(0);
 
-			if (_strcmp(array[0], xclose[0]) == 0) /* By sotelo line ♥ */
-				_sfree(array), free(token), free(buffer), exit(0);
+			array = _split_string(buffer, " ");
+			token = _token(array);
+			if(token == NULL)
+				token = array[0];
 
 			if (_print_env(array) != 1)
 				_exec(count_w, token, array);
 		}
 		if (isatty(STDIN_FILENO) != 0)
-		write(STDOUT_FILENO, "\033[94mminishell$: \033[0m", 16);
+			write(STDOUT_FILENO, "\033[94mminishell$: \033[0m", 16);
 	}
 	if (isatty(STDIN_FILENO) != 0)
 	write(STDOUT_FILENO, "\n", 1);
