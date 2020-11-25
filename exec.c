@@ -31,11 +31,12 @@ int _exec(int count_w, char *token, char *array[])
 		else
 		{
 			wait(NULL);
+			if (token != array[0])
+				free(token);
 			_sfree(array);
-			free(token);
+
 		}
 	}
-
 	else
 	{
 		_error(count_w, array);
@@ -78,8 +79,8 @@ return (-1);
 void _ctrl_c(int sig)
 {
 	(void)sig;
-	write(STDERR_FILENO, "\n", 2);
-	exit(0);
+	write(STDERR_FILENO, "\n", 1);
+	write(STDOUT_FILENO, "\033[94mminishell$: \033[0m", 16);
 }
 
 /**

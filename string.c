@@ -14,11 +14,16 @@ char *_token(char *array[])
 
 	if (array[0][0] == '/' || array[0][0] == ' ')
 	{
-		if (token[0] != '/')
+		if (array[0][0] == ' ')
 		{
 			token = _string_directory(array);
 			return (token);
 		}
+		else
+		{
+			token = array[0];
+		}
+
 	}
 	else
 	{
