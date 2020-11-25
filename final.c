@@ -21,10 +21,7 @@ void _error(int count_w, char *array[])
 	if (isatty(STDIN_FILENO) != 0)
 	{
 		write(STDERR_FILENO, "\033[94mminishell$: \033[0m", 17);
-
-	write(STDERR_FILENO, print_c, i); /* by Andy.*/
-
-
+		write(STDERR_FILENO, print_c, i); /* by Andy.*/
 		write(STDERR_FILENO, ": ", 2);
 	}
 		for (i = 0; array[0][i]; i++)
@@ -32,6 +29,7 @@ void _error(int count_w, char *array[])
 
 		write(STDERR_FILENO, array[0], i);
 		write(STDIN_FILENO, ": not found\n", 12);
+		free(print_c);
 }
 
 /**
