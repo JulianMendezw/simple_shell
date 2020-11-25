@@ -1,6 +1,16 @@
 #include "header.h"
 #define BSIZE 4
 
+/**
+ * _memset - Function to set a . at the begining of a string.
+ *
+ * @s: string from buffer
+ * @b: string from buffer
+ * @n: string from buffer
+ *
+ * Return: string with a . at the begining of a string.
+ */
+
 char *_memset(char *s, char b, unsigned int n)
 {
 	unsigned int i;
@@ -10,6 +20,16 @@ char *_memset(char *s, char b, unsigned int n)
 	return (s);
 }
 
+/**
+ * _memcpy - Function to set a . at the begining of a string.
+ *
+ * @dest: string from buffer
+ * @src: string from buffer
+ * @n: string from buffer
+ *
+ * Return: string with a . at the begining of a string.
+ */
+
 char *_memcpy(char *dest, char *src, unsigned int n)
 {
 	unsigned int i;
@@ -18,6 +38,16 @@ char *_memcpy(char *dest, char *src, unsigned int n)
 		dest[i] = src[i];
 	return (dest);
 }
+
+/**
+ * _realloc - Function to set a . at the begining of a string.
+ *
+ * @ptr: string from buffer
+ * @old_size: string from buffer
+ * @new_size: string from buffer
+ *
+ * Return: string with a . at the begining of a string.
+ */
 
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
@@ -52,6 +82,17 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	free(ptr);
 	return (ptr2);
 }
+
+/**
+ * _getline - Function to set a . at the begining of a string.
+ *
+ * @buffer: string from buffer
+ * @bufsize: string from buffer
+ * @fd: string from buffer
+ *
+ * Return: string with a . at the begining of a string.
+ */
+
 
 int _getline(char **buffer, size_t *bufsize, int fd)
 {

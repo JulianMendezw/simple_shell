@@ -29,7 +29,7 @@ int main(int ac, char *argv[])
 	signal(SIGINT, _ctrl_c);
 	while ((r_bytes = getline(&buffer, &nbytes, stdin)) != -1 && ++count_w)
 	{
-		if(r_bytes != 1) /*enter line*/
+		if (r_bytes != 1) /*enter line*/
 		{
 			if (_print_env(buffer) == -1)
 			{

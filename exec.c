@@ -47,7 +47,7 @@ int _exec(int count_w, char *token, char *array[])
 
 /**
  * _print_env - Function to print env
- * @array: string from buffer to compare
+ * @buffer: string from buffer to compare
  * Return: 1 for success or -1 for error
  */
 
@@ -58,7 +58,7 @@ int _print_env(char *buffer)
 	char *key_word[] = {"env", NULL};
 	char *env_token = NULL;
 
-	if(buffer[0] == ' ')
+	if (buffer[0] == ' ')
 		env_token =	_strtok(buffer, " ");
 	else
 	{
