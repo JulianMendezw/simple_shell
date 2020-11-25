@@ -51,12 +51,21 @@ int _exec(int count_w, char *token, char *array[])
  * Return: 1 for success or -1 for error
  */
 
-int _print_env(char **array)
+int _print_env(char *buffer)
 {
+
 	int i = 0, j = 0;
 	char *key_word[] = {"env", NULL};
+	char *env_token = NULL;
 
-	if (_strcmp(array[0], key_word[0]) == 0)
+	if(buffer[0] == ' ')
+		env_token =	_strtok(buffer, " ");
+	else
+	{
+		env_token = buffer;
+	}
+
+	if (_strcmp(env_token, key_word[0]) == 0)
 	{
 		while (environ[i])
 		{
@@ -70,6 +79,7 @@ int _print_env(char **array)
 	}
 return (-1);
 }
+
 
 /**
  *_ctrl_c - function to capture interruption signal

@@ -96,7 +96,7 @@ char *_hack_path(char *path)
 
 	for (; path[i] != '\0'; i++) /*Para saber el length de Path*/
 	;
-	path2 = malloc(sizeof(char) * i + 1);
+	path2 = malloc(sizeof(char) * i + 2);
 	if (!path2)
 	{
 		free(path_cpy);
@@ -107,7 +107,7 @@ char *_hack_path(char *path)
 
 	for (i = 0; path_cpy[i] != '\0'; i++)
 	{
-		path2[i + 1] = path_cpy[i + 1];
+		path2[i + 1] = path_cpy[i];
 	}
 	path2[i] = '\0';
 
