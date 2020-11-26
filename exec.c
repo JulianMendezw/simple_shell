@@ -19,13 +19,13 @@ int _exec(int count_w, char *token, char *array[])
 	{
 		child = fork();
 		if (child == -1)
-			free(token),
+			free(token), _sfree(array);
 			perror("Error"), exit(1);
 
 		if (child == 0)
 		{
 			if (execve(token, array, NULL) == -1)
-				/* free(buffer), free(array), free(token),*/
+				_free(array), free(token),
 				perror("Error Execve"), exit(1);
 		}
 		else
