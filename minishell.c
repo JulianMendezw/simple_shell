@@ -35,7 +35,7 @@ int main(int ac, char *argv[])
 			if (_print_env(buffer) == -1)
 			{
 				if (_strcmp(buffer, xclose[0]) == 0) /* By sotelo line ♥ */
-					free(buffer), exit(0);
+					free(buffer), exit(EXIT_SUCCESS);
 
 				array = _split_string(buffer, " ");
 				token = _token(array);
