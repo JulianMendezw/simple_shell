@@ -25,7 +25,7 @@ int _exec(int count_w, char *token, char *array[])
 		if (child == 0)
 		{
 			if (execve(token, array, NULL) == -1)
-				_free(array), free(token),
+				_sfree(array), free(token),
 				perror("Error Execve"), exit(1);
 		}
 		else
