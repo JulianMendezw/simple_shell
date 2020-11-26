@@ -20,12 +20,12 @@ int _exec(int count_w, char *token, char *array[])
 		child = fork();
 		if (child == -1)
 			free(token),
-			perror("Error"), exit(1);
+			perror("Error"), exit(0);
 
 		if (child == 0)
 		{
 			if (execve(token, array, NULL) == -1)
-				perror("Error Execve"), exit(1);
+				perror("Error Execve"), exit(0);
 		}
 		else
 		{
