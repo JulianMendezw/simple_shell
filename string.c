@@ -1,7 +1,7 @@
 #include "header.h"
 
 /**
- * _token - Function to split a strink by tokens
+ * _token - Function to split a string by tokens
  *
  * @array: array to save all tokens
  *e
