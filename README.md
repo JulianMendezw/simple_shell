@@ -1,5 +1,5 @@
-<div align="center"><img src="https://i.ibb.co/Scc7GXM/Monty.jpg"></div>
-<img src="https://i.ibb.co/Scc7GXM/Monty.jpg" alt="Monty" border="0">
+<div align="center"><img src="https://i.ibb.co/JCppdPB/Monty-mins.jpg"></div>
+
 
 
 ### SHELL PROJECT - SIMPLE SHELL
