@@ -1,3 +1,6 @@
+<div align="center"><img src="https://i.ibb.co/Scc7GXM/Monty.jpg"></div>
+
+
 ### SHELL PROJECT - SIMPLE SHELL
 
 Unix shell is a command-line interpreter designed to read commands typed by a user and execute appropriate programs in response to those commands. The shell is both an interactive command language and a scripting language, and is used by the operating system to control the execution of the system using shell scripts.
