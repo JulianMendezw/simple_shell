@@ -1,4 +1,4 @@
-<div align="center"><img src="https://i.ibb.co/gM17V3p/19168729.png"></div>
+<div align="center"><img src="https://i.ibb.co/K9C6qgX/Simple-Shell.png"></div>
 
 
 
