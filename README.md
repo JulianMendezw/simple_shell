@@ -62,6 +62,6 @@ built-in.c  header.h  shell_test_suite	string_directory.c
 
 ### Authors
 
-Julián Mendez | @julianmendezx
+Julián Mendez | @julianmendezw
 
 Helena Cortés | @helectron
